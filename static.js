@@ -9,8 +9,10 @@
 var statics = {
     db:
     {
-      address: 'localhost',
-      port: '5432'
+      address: 'gschool.ddns.net',
+      port: '2200',
+      username: 'gschool',
+      password: 'gschool123'
     },
     yelp:
     {
