@@ -1,0 +1,145 @@
+
+#backingBox
+{
+    position: absolute;
+    left: -1px;
+    width: 100%;
+    top: -1px;
+    height: 45em;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+}
+#rectangle2
+{
+    position: absolute;
+    left: -1px;
+    width: 100%;
+    top: 0px;
+    height: 23px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+}
+#text
+{
+    position: absolute;
+    left: -1px;
+    width: 65px;
+    top: 0px;
+    height: 14px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 4px 0;
+}
+#text2
+{
+    position: absolute;
+    left: 204px;
+    width: 95px;
+    top: 2px;
+    height: 2px;
+    background: none;
+    border: none;
+    font-size: 9.5px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 9px 0;
+}
+#rectangle3
+{
+    position: absolute;
+    left: 14px;
+    width: 263px;
+    top: 35px;
+    height: 106px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+}
+#text3
+{
+    position: absolute;
+    left: 19px;
+    width: 253px;
+    top: 41px;
+    height: 49px;
+    background: none;
+    border: none;
+    font-size: 21px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 9px 0;
+}
+#text4
+{
+    position: absolute;
+    left: 20px;
+    width: 249px;
+    top: 111px;
+    height: 17px;
+    background: none;
+    border: none;
+    font-size: 7.5px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 6px 0;
+}
+#roundedRectangle
+{
+    position: absolute;
+    left: 42px;
+    width: 62px;
+    top: 154px;
+    height: 27px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-border-radius: 4.5px 4.5px 4.5px 4.5px;
+       -moz-border-radius: 4.5px 4.5px 4.5px 4.5px;
+            border-radius: 4.5px 4.5px 4.5px 4.5px;
+}
+#roundedRectangle2
+{
+    position: absolute;
+    left: 172px;
+    width: 70px;
+    top: 154px;
+    height: 27px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-border-radius: 4.5px 4.5px 4.5px 4.5px;
+       -moz-border-radius: 4.5px 4.5px 4.5px 4.5px;
+            border-radius: 4.5px 4.5px 4.5px 4.5px;
+}
+#text5
+{
+    position: absolute;
+    left: 42px;
+    width: 63px;
+    top: 156px;
+    height: 27px;
+    background: none;
+    border: none;
+    font-size: 11px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+#text6
+{
+    position: absolute;
+    left: 176px;
+    width: 65px;
+    top: 157px;
+    height: 25px;
+    background: none;
+    border: none;
+    font-size: 11px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
