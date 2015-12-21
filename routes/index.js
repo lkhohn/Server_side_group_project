@@ -16,6 +16,13 @@ router.post('/', function(req, res, next){
 
 router.get('/login', function(req, res, next){
   // for login
+<<<<<<< HEAD
+});
+
+router.get('/signup', function(req, res, next){
+  //for the registration page
+=======
+>>>>>>> dev
 });
 
 router.get('/signup', function(req, res, next){

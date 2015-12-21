@@ -57,43 +57,21 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- end navbar area-->
-    <div class="row">
-      <div class="top_Text">
-        <div class="col-md-12">
-        This is the top text on the line
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 rowStart">
-      </div>
-    <div class="col-xs-6 col-md-3 thumbnails">
-      <a href="#" class="thumbnail">
-        <img src="..." alt="...">
-          <p> this is the description for the box</p>
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3 thumbnails">
-      <a href="#" class="thumbnail">
-        <img src="..." alt="...">
-          <p> this is the description for the box</p>
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3 rowEnd">
-    </div>
-  </div>
-  <div class="row">
-    <div class="desc_Text">
-      <div class="col-md-12">
-      This is the text below the thubnails
-      </div>
-    </div>
-    <div class="btm_Desc">
-      <div class="col-md-12">
-      Second line below thumbnails
-      </div>
-    </div>
-</div>
+    <form action="/testaccountcreation" method="post">
+       <label for="username">Enter a Username
+         <input type="text" name="username"></input>
+       </label>
+       <label for="email">Enter an Email
+         <input type="text" name="email"></input>
+       </label>
+       <label for="password">Create a Password
+         <input type="text" name="password"></input>
+       </label>
+       <label for="confirm_password">Confirm Password
+         <input type="text" name="confirm_password"></input>
+       </label>
+       <button type="submit"></button>
+     </form>
 
   <footer class="navbar navbar-default" "footer">
   <div class="container-fluid">
