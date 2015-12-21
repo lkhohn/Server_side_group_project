@@ -9,6 +9,7 @@
 var statics = {
     db:
     {
+      name: 'ketchup',
       address: 'gschool.ddns.net',
       port: '2200',
       username: 'gschool',
