@@ -33,7 +33,9 @@ html, body {
 .thumbnails {
     text-align:center;
 }
+.Name {
 
+}
 .thumbnails > li {
     display: inline-block;
     *display:inline; /* ie7 fix */
