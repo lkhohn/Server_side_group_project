@@ -15,7 +15,11 @@ router.post('/', function(req, res, next){
 });
 
 router.get('/login', function(req, res, next){
-  // for login or registration page
+  // for login
+});
+
+router.get('/signup', function(req, res, next){
+  //for the registration page
 });
 
 router.get('/home', function(req, res, next){
