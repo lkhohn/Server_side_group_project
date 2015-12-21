@@ -24,7 +24,13 @@ router.get('/signup', function(req, res, next){
 
 router.get('/usrhome', function(req, res, next){
 // home page after login in/registration
-res.render('index', { title: 'Express' });
+res.render('index', {
+    linkHome:'/home',
+    linkApt: '/apt',
+    linkProfile: '/profile',
+    linkPref:'/preferences',
+    linkLogout:'/logout'
+ });
 
 });
 
