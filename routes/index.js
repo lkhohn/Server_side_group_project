@@ -1,18 +1,26 @@
+require('dotenv').load();
 var express = require('express');
 var router = express.Router();
 var account = require('../local_modules/accounts');
 var knex = require('knex')({
-  client: 'pg', //we will be using pg to connect to postgres
-  connection: {
-    host: 'gschool.ddns.net', //localhost server
-    port: 2200, //default pg server port
-    user: 'gschool', //your username
-    password: 'gschool123',
-    database: 'ketchup' //yourdatabase name
-  }
+  client: 'pg',
+  connection: process.env.DATABASE_URL
 });
 
-/* GET home page. */
+
+var ketchupUsers = function() {
+  return knex('users');
+};
+ketchupUsers().where({
+  //what you would like to search for
+}).then(function(users) {
+  //what to do on success
+  console.log(users);
+}).catch(function(err) {
+  //what to do on error
+  console.log(err);
+});
+//console.log(knex.select('*').from('users'));
 
 router.get('/example_query', function(req, res, next) {
   //example of querying Micah's database using knex
@@ -30,6 +38,7 @@ router.get('/example_query', function(req, res, next) {
   });
 });
 
+/* GET home page. */
 router.get('/', function(req, res, next) {
   // landing page
   res.render('./index', {
@@ -78,10 +87,21 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   // for registration page
   var userSubmission = req.body;
-  res.send(account().createAccount(res, userSubmission));
+  var ketchupUsers = function() {
+    return knex('users');
+  };
+  ketchupUsers().where({
+    //what you would like to search for
+  }).then(function(users) {
+    //what to do on success
+    account().createAccount(res, userSubmission, users);
+  }).catch(function(err) {
+    //what to do on error
+    console.log(err);
+  });
 });
 
-
+//{"id":1,"username":"micah.eberhard@gmail.com","password":"tempPass","salt":"1","email":"micah.eberhard@gmail.com"}
 
 router.get('/usrhome', function(req, res, next) {
   // home page after login in/registration
@@ -93,7 +113,6 @@ router.get('/usrhome', function(req, res, next) {
     linkLogout: '/logout'
   });
 });
-
 
 router.get('/aptSch', function(req, res, next) {
   // appoint set up
@@ -110,7 +129,6 @@ router.post('/aptSch', function(req, res, next) {
   // appoint set up
 });
 
-
 router.get('/pref', function(req, res, next) {
   // preferences set up
   res.render('./pref', {
@@ -121,7 +139,5 @@ router.get('/pref', function(req, res, next) {
     linkLogout: '/logout'
   });
 });
-
-
 
 module.exports = router;
