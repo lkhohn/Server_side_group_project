@@ -89,8 +89,15 @@ function addMarker(place) {
         console.error(status);
         return;
       }
-      infoWindow.setContent(result.name + "<br />" + result.formatted_address + "<br />" + result.website + "<br />" + result.formatted_phone_number + "<br />");
+      // ALL buttons will open a infoWindow if hours are NOT requested
+      // infoWindow.setContent(result.name + "<br />" + result.formatted_address + "<br />" + result.website + "<br />" + result.formatted_phone_number);
+
+      // request includes hours. NOTE: NOT ALL buttons will display infoWindow
+      infoWindow.setContent(result.name + "<br />" + result.formatted_address + "<br />" + result.website + "<br />" + result.formatted_phone_number + "<br />" + result.opening_hours.weekday_text);
       infoWindow.open(map, marker);
+
+      $('#mtgLocation').val(result.name + " " + result.formatted_address + " " + result.website + " " + result.formatted_phone_number);
+
     });
   });
 }
