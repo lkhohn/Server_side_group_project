@@ -13,16 +13,11 @@ var knex = require('knex')({
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-// landing page
-
-  res.render('index', { title: 'Express' });
-});
 
 router.get('/example_query', function(req, res, next) {
   //example of querying Micah's database using knex
-  var ketchupUsers = function(){
-     return  knex('users');
+  var ketchupUsers = function() {
+    return knex('users');
   };
   ketchupUsers().where({
     //what you would like to search for
@@ -35,70 +30,98 @@ router.get('/example_query', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res, next){
+router.get('/', function(req, res, next) {
+  // landing page
+  res.render('./index', {
+    linkHome: '/index',
+    linkApt: '/aptSch',
+    linkProfile: '/profile',
+    linkPref: '/pref',
+    linkLogout: '/logout'
+  });
+});
+
+router.post('/', function(req, res, next) {
   // for login or registration
   var input = req.body.textarea;
 });
 
-router.get('/login', function(req, res, next){
+router.get('/login', function(req, res, next) {
   // for login
-
-});
-
-router.get('/signup', function(req, res, next){
-  // for registration page
-});
-
-router.get('/usrhome', function(req, res, next){
-
-// home page after login in/registration
-res.render('index', {
-    linkHome:'/home',
-    linkApt: '/apt',
+  res.render('./login', {
+    linkHome: '/index',
+    linkApt: '/aptSch',
     linkProfile: '/profile',
-    linkPref:'/preferences',
-    linkLogout:'/logout'
- });
-
-
+    linkPref: '/pref',
+    linkLogout: '/logout'
+  });
 });
-router.post('/login', function(req, res, next){
+
+router.post('/login', function(req, res, next) {
   // for login or registration page
   if (account.compareCredentials()) {
     //authorize user
   }
 });
 
-router.get('/signup', function(req, res, next){
+router.get('/signup', function(req, res, next) {
   // for login or registration page
-  res.send();
+  res.render('./signup', {
+    linkHome: '/index',
+    linkApt: '/aptSch',
+    linkProfile: '/profile',
+    linkPref: '/pref',
+    linkLogout: '/logout'
+  });
 });
 
-router.post('/signup', function(req, res, next){
-  // for login or registration page
+router.post('/signup', function(req, res, next) {
+  // for registration page
   var userSubmission = req.body;
   res.send(account().createAccount(res, userSubmission));
 });
 
-router.get('/home', function(req, res, next){
+
+
+router.get('/usrhome', function(req, res, next) {
   // home page after login in/registration
-  res.render('index', { title: 'Express' });
-
+  res.render('./usrhome', {
+    linkHome: '/home',
+    linkApt: '/apt',
+    linkProfile: '/profile',
+    linkPref: '/preferences',
+    linkLogout: '/logout'
+  });
 });
 
-router.get('/pref', function(req, res, next){
-// preferences set up
-});
 
-
-router.get('/aptSch', function(req, res, next){
+router.get('/aptSch', function(req, res, next) {
   // appoint set up
-  res.render('index', { title: 'Express' });
+  res.render('./aptSch', {
+    linkHome: '/index',
+    linkApt: '/aptSch',
+    linkProfile: '/profile',
+    linkPref: '/pref',
+    linkLogout: '/logout'
+  });
 });
 
-router.post('/aptSch', function(req, res, next){
-// appoint set up
+router.post('/aptSch', function(req, res, next) {
+  // appoint set up
 });
+
+
+router.get('/pref', function(req, res, next) {
+  // preferences set up
+  res.render('./pref', {
+    linkHome: '/index',
+    linkApt: '/aptSch',
+    linkProfile: '/profile',
+    linkPref: '/pref',
+    linkLogout: '/logout'
+  });
+});
+
 
 
 module.exports = router;
