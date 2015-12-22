@@ -58,31 +58,40 @@
     </nav>
     <!-- end navbar area-->
     <div class="bigBox">
-      <div class="leftspace col-md-4">
+      <div class="row">
+      <div class="leftspace col-md-3">
       </div>
-      <div class="signupForm col-md-4">
+      <div class="signupForm col-md-6">
+        <div class="row">
+          <div class ="leftBox col-md-4">
+          </div>
+        <div class="title col-md-4"> WELCOME PLEASE SIGN UP<br> </div>
+        <div class ="leftBox col-md-4">
+        </div>
+        </div
         <form action="/signup" method="post">
-           <div class="formBox"><label for="username">Enter a Username
-             <input type="text" name="username"></input>
+           <div class="formBox"><label for="username">Enter a Username<br>
+             <input type="text" name="username" placeholder="Put your Username here!"></input>
            </label>
          </div>
            <div class="formBox"><label for="email">Enter an Email<br>
-             <input type="text" name="email"></input>
+             <input type="text" name="email" placeholder="What's your favorite ID?"></input>
            </label>
            </div>
-           <div class="formBox"><label for="password">Create a Password
-             <input type="text" name="password"></input>
+           <div class="formBox"><label for="password">Create a Password<br>
+             <input type="text" name="password" placeholder="shhhh don't tell anybody"></input>
            </label>
            </div>
-           <div class="formBox"><label for="confirm_password">Confirm Password
-             <input type="text" name="confirm_password"></input>
+           <div class="formBox"><label for="confirm_password">Confirm Password<br>
+             <input type="text" name="confirm_password" placeholder="boop"></input>
            </label>
            </div>
            <button type="submit">Submit</button>
          </form>
        </div>
-       <div class="rightSpace">
+       <div class="rightSpace col-md-3">
        </div>
+     </div>
    </div>
 
   <footer class="navbar navbar-default" "footer">

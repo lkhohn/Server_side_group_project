@@ -76,7 +76,9 @@ background-image: linear-gradient(to right bottom, #6949DE 0%, #6BFFCE 100%, #FF
   top: 0%;
   transform: translateY(100%);
 }
-.signupForm {
+
+
+/*.signupForm {
   display: block;
   background: -webkit-gradient(
   	linear,
@@ -115,17 +117,25 @@ background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);
   top: 100px;
   height: 400px;
   width: 500px;
-}
+}*/
 
 .extension {
   height: 100px;
+  font-size: 3em ;
 }
 
 
-
+.title {
+  padding-top: 150px;
+}
 .form-group{
-  padding-top: 40px;
+  padding-top: 50px;
 }
+.prefForm {
+  background-color: white;
+  width: 50%;
+}
+
 
 /*.signupForm:hover{109CFF
   background-color: -webkit-gradient(
