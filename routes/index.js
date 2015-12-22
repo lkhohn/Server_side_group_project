@@ -63,7 +63,7 @@ router.post('/login', function(req, res, next) {
         res.cookie('user_session', user[0], {signed: true});
         res.redirect('/users/usrhome/');
       } else {
-        res.send('invalid username or password');
+        res.redirect('/login');
       }
     }
   }).catch(function(err) {
@@ -92,10 +92,12 @@ router.post('/signup', function(req, res, next) {
     var valid = account().isValidAccount(res, userSubmission, users);
     switch (valid) {
       case 0:
-        res.send('invalid password');
+        res.redirect('/signup');
+        //res.send('invalid password');
         break;
       case 1:
-        res.send('invalid username');
+        res.redirect('/signup');
+        //res.send('invalid username');
         break;
       case 2:
         knex.insert({
@@ -103,7 +105,7 @@ router.post('/signup', function(req, res, next) {
           password: account().hashPassword(userSubmission)
         }).into('users').then(function(success) {
           console.log(success);
-          res.send('success');
+          res.redirect('/login');
         }, function(err) {
           console.log(err);
           res.end(err);
