@@ -18,8 +18,10 @@ DROP TABLE appointments;
 CREATE TABLE appointments(
   id SERIAL PRIMARY KEY,
   creator_id integer,
-  -- loc_lat:  numeric,
-  -- loc_lng: numeric,
+  invite_id integer,
+  address VARCHAR(256),
+  loc_lat  decimal,
+  loc_lng decimal,
   start_datetime VARCHAR(256),
   duration VARCHAR(256),
   description VARCHAR(256),
@@ -35,14 +37,13 @@ CREATE TABLE appointments(
     googleCal_url VARCHAR(256)
   );
 
-
-  DROP TABLE apt_sum;
-  CREATE TABLE apt_sum(
-    user_id numeric,
-    appointments_id numeric,
-    location_id numeric,
-    start_datetime VARCHAR(256)
-  );
+  -- DROP TABLE apt_sum;
+  -- CREATE TABLE apt_sum(
+  --   user_id numeric,
+  --   appointments_id numeric,
+  --   location_id numeric,
+  --   start_datetime VARCHAR(256)
+  -- );
 -- users = { id: 2,
 --      username: 'john@jack.com',
 --      password: 'pass123',
