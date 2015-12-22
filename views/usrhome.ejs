@@ -14,6 +14,51 @@
 
   <script src='public/javascript/navBar.js'></script>
 
+  <style media="screen">
+    .aptCollector{
+      display: block;
+      height: auto;
+      box-shadow: .2rem .2rem .4rem .2rem #000000;
+      border: .1rem solid black;
+      z-index: 1;
+      background-color: rgb(255, 255, 255);
+      border-radius: 1rem;
+    }
+    .aptHeader{
+      box-shadow: .2rem .1rem .2rem .1rem #000000;
+      background-color: rgb(235, 235, 235);
+      margin-bottom: .2rem;
+      padding-top: .4rem;
+      padding-bottom: .4rem;
+      border-radius: 1rem;
+    }
+    .C{
+      background-color: rgb(138, 177, 140);
+    }
+    .M{
+      background-color: rgb(232, 227, 155);
+    }
+    .R{
+      background-color: rgb(233, 167, 167);
+    }
+    .aptHeaderL{
+      margin-bottom: .2rem;
+      padding-top: .4rem;
+      padding-bottom: .4rem;
+      border-radius: 1rem;
+    }
+    #yourApts{
+      width: 40%;
+      margin: auto;
+    }
+    #invApts{
+      width: 40%;
+      margin: auto;
+    }
+    .moreInfo{
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,21 +91,26 @@
   </nav>
 
   <div class="bigBox">
-    <div class="row">
-      <div class="top_Text">
-        <div class="col-md-12">
-          <h2>Confirmed Appointments</h2>
-        </div>
+  <div class="row">
+    <div class="top_Text">
+      <div class="col-md-12">
+        <h2>Your Appointments</h2>
       </div>
     </div>
+  </div>
+  <div id="yourApts">
+    <%-yourApts %>
+  </div>
 
-    <div class="row">
-      <div class="desc_Text">
-        <div class="col-md-12">
-          <h2>Unconfirmed Appointments</h2>
-        </div>
+  <div class="row">
+    <div class="desc_Text">
+      <div class="col-md-12">
+        <h2>Appointments You've Been Invited To</h2>
       </div>
     </div>
+  </div>
+  <div id="invApts">
+    <%-invApts %>
   </div>
 
   <div class="panel panel-default">
@@ -85,9 +135,13 @@
       </div>
     </div>
   </div>
+</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="/javascript/home.js" charset="utf-8"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV27rjUQoC_np17lGCrD4hmuIpA0ne4pg&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
 
 </body>
 
