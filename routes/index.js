@@ -136,14 +136,19 @@ router.post('/aptSch', function(req, res, next) {
   }).then(function(users) {
     knex.insert({
       // creator_id: this wil come from the login information
+      // invite_id: userSubmission.mtgInvite,
+      address: userSubmission.mtgAddress,
+      loc_lat: userSubmission.loc_lat,
+      loc_lng: userSubmission.loc_lng,
       start_datetime: userSubmission.mtgDate,
       duration: userSubmission.mtgDuration,
-      description: userSubmission.mtgDesc,
-      invite_id: userSubmission.mtgInvite,
-      location_id: userSubmission.mtgLocation
+      description: userSubmission.mtgDesc
+      // creator_confirm:
+      // invite_confirm:
+      // location_id:
     }).into('appointments').then(function(success) {
-      res.send('success');
-      res.render('/usrhome');
+      // res.send('success');
+      res.redirect('/usrhome');
       res.end();
     });
   });
