@@ -131,12 +131,13 @@ router.get('/aptSch', function(req, res, next) {
 router.post('/aptSch', function(req, res, next) {
   // appoint set up
   var userSubmission = req.body;
+  var userID = 1;
   knex('appointments').where({
     //what you would like to search for
   }).then(function(users) {
     knex.insert({
-      // creator_id: this wil come from the login information
-      // invite_id: userSubmission.mtgInvite,
+      creator_id: userID,
+      invite_id: 2,
       address: userSubmission.mtgAddress,
       loc_lat: userSubmission.loc_lat,
       loc_lng: userSubmission.loc_lng,
