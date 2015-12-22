@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
 
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <!-- end bootstrap code/ begin css entry -->
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src='public/javascript/navBar.js'></script>
 
 </head>
 
@@ -20,144 +20,122 @@
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href=< %=linkHome%> >KetchUp</a>
+        <a class="navbar-brand" href= <%=linkHome %> >ketchUp</a>
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href= <%=linkHome %> >Home <span class="sr-only">(current)</span></a></li>
-          <li><a href= <%=linkApt %> >Schedule a meeting</a></li>
+        <ul id='nav' class="nav navbar-nav">
+          <li class='active'><a href= <%=linkHome %> >home <span class="sr-only"</span></a></li>
+          <li><a href= <%=linkApt %> >schedule a meeting</a></li>
         </ul>
-
-        <ul class="nav navbar-nav navbar-right">
+        <ul id='nav' class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href= <%=linkPref %> >Preferences</a></li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">account <span class="caret"></span></a>
+            <ul id='nav' class="dropdown-menu">
+              <li><a href= <%=linkPref %> >preferences</a></li>
               <li role="separator" class="divider"></li>
               <li>
                 <a href= <%=linkLogout %>
-                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log Out</a>
+                  <span class="badge"></span>
+                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> log out</a>
               </li>
             </ul>
           </li>
         </ul>
       </div>
-      <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
   </nav>
-<!-- end navbar area _______________________________ -->
 
-<div class="bigBox">
-  <div class="row">
-  <div class="leftBox col-md-3">
+
+  <div class="bigBox">
+    <div class="row">
+      <div class="leftBox col-md-3">
+      </div>
+      <div class="extension col-md-6 mainContainer">
+        <p> User Preferences </p>
+      </div>
+      <div class="rightBox col-md-3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="leftBox col-md-3">
+      </div>
+      <div class="container col-md-6">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputUser3" class="col-sm-2 control-label">User ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputUser3" placeholder="change your userID">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="update your email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="change your password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="locationUser3" class="col-sm-2 control-label">Default Location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="locationUser3" placeholder="set your default location">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="restaurantPrefUser3" class="col-sm-2 control-label">Favorite Meeting Location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="restaurantPrefUser3" placeholder="set your favorite place to meet">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Save Changes</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="rightBox col-md-3">
+      </div>
+    </div>
   </div>
-    <div class="extension col-md-6 mainContainer">
-      <p> User Preferences </p>
-    </div>
-    <div class="rightBox col-md-3">
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-footer">
+      <div class='row'>
+        <div class='col-md-6'>
+          <ul class='panel-footer-left'>
+            <ol><a href= <%=linkHome %> >home </a></ol>
+            <ol><a href= <%=linkApt %> >schedule a meeting</a></ol>
+            <ol><a href= <%=linkPref %> >preferences</a></ol>
+          </ul>
+        </div>
+        <div class='col-md-6'>
+          <ul class='panel-footer-right'>
+            <ol>designed by</ol>
+            <ol><a href='https://github.com/micah-eberhard'>Micah Eberhard </a></ol>
+            <ol><a href='https://github.com/KeenanHoffman'>Keenan Hoffman </a></ol>
+            <ol><a href='https://github.com/lkhohn'>Lindsay Hohn </a></ol>
+            <ol><a href='https://github.com/James80401'>James Shield </a></ol>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-  <div class="leftBox col-md-3">
-  </div>
-    <div class="container col-md-6">
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label for="inputUser3" class="col-sm-2 control-label">User ID</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputUser3" placeholder="change your userID">
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="update your email">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="change your password">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="locationUser3" class="col-sm-2 control-label">Default Location</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="locationUser3" placeholder="set your default location">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="restaurantPrefUser3" class="col-sm-2 control-label">Favorite Meeting Location</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="restaurantPrefUser3" placeholder="set your favorite place to meet">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Save Changes</button>
-      </div>
-    </div>
-
-  </form>
-</div>
-  <div class="rightBox col-md-3">
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-  <footer class="navbar navbar-default" "footer">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">KetchUp</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </footer>
-
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-
-
 
 </body>
