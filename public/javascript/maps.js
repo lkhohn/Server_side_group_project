@@ -96,7 +96,13 @@ function addMarker(place) {
       infoWindow.setContent(result.name + "<br />" + result.formatted_address + "<br />" + result.website + "<br />" + result.formatted_phone_number + "<br />" + result.opening_hours.weekday_text);
       infoWindow.open(map, marker);
 
-      $('#mtgLocation').val(result.name + " " + result.formatted_address + " " + result.website + " " + result.formatted_phone_number);
+      $('#mtgAddress').val(result.formatted_address);
+
+      var lat = marker.getPosition().lat();
+      var lng = marker.getPosition().lng();
+      // set those values equal to the form
+      $('#loc_lat').val(lat);
+      $('#loc_lng').val(lng);
 
     });
   });
