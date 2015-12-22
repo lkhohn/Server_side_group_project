@@ -36,7 +36,7 @@ function account() {
       }
     },
     hashPassword: function (userSubmission) {
-      var hash = bcrypt.hashSync(sha256.x2(userSubmission.password), 11);
+      var hash = bcrypt.hashSync(userSubmission.password, 11);
       return hash;
     },
     //checks the submitted password against the matching username's stored password

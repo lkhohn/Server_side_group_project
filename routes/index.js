@@ -54,8 +54,8 @@ router.post('/login', function(req, res, next) {
   var userSubmission = req.body;
   knex('users').where({
     username: userSubmission.username
-  }).then(function(password) {
-    res.send(account.compareCredentials(res, userSubmission.password, password));
+  }).then(function(user) {
+    res.send(account().compareCredentials(res, userSubmission.password, user[0].password));
   }).catch(function(err) {
     console.log(err);
   });
@@ -74,10 +74,6 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   // for registration page
   var userSubmission = req.body;
-
-  // var ketchupUsers = function() {
-  //   return knex('users');
-  // };
   knex('users').where({
     //what you would like to search for
   }).then(function(users) {
