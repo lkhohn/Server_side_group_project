@@ -81,10 +81,22 @@ input.form-control {
 button.btn-default {
   margin:2em;
 }
- h1.aptSchHeader{
+ h1.aptSchHeader {
    text-align:center;
    padding-bottom:0.5em;
  }
+
+
+
+/* pref page */
+.prefHeader {
+  text-align: center;
+}
+#form-group-pref {
+  margin: 2em;
+
+}
+
 
 /*.signupForm {
   display: block;
@@ -136,9 +148,9 @@ background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);
 .title {
   padding-top: 150px;
 }
-.form-group{
+/*.form-group{
   padding-top: 50px;
-}
+}*/
 .prefForm {
   background-color: white;
   width: 50%;
