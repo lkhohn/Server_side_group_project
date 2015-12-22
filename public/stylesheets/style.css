@@ -25,16 +25,11 @@ html, body {
   padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
 
-.footer {
-  position: relative;
-  margin-top: -150px; /* negative value of footer height */
-  height: 150px;
-  clear:both;
-  padding-top:20px;
-}
-.row {
+
+/*.row {
   text-align: center;
-}
+}*/
+
 .thumbnails {
     text-align:center;
 }
@@ -71,12 +66,25 @@ background-image: -ms-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #F
 background-image: linear-gradient(to right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
 }
 
-.footer {
-  position: fixed;
-  top: 0%;
+/*footer */
+.panel {
   transform: translateY(100%);
+  height: 150px;
+  clear:both;
+  padding-top:20px;
 }
 
+/*aptSch form */
+input.form-control {
+  margin:2em;
+}
+button.btn-default {
+  margin:2em;
+}
+ h1.aptSchHeader{
+   text-align:center;
+   padding-bottom:0.5em;
+ }
 
 /*.signupForm {
   display: block;
