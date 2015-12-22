@@ -7,21 +7,6 @@ var knex = require('knex')({
   connection: process.env.DATABASE_URL
 });
 
-
-var ketchupUsers = function() {
-  return knex('users');
-};
-ketchupUsers().where({
-  //what you would like to search for
-}).then(function(users) {
-  //what to do on success
-  console.log(users);
-}).catch(function(err) {
-  //what to do on error
-  console.log(err);
-});
-//console.log(knex.select('*').from('users'));
-
 router.get('/example_query', function(req, res, next) {
   //example of querying Micah's database using knex
   var ketchupUsers = function() {
@@ -68,13 +53,18 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
   // for login or registration page
-  if (account.compareCredentials()) {
-    //authorize user
-  }
+  var userSubmission = req.body;
+  knex('users').where({
+    username: userSubmission.username
+  }).then(function(password) {
+    res.send(account.compareCredentials(res, userSubmission.password, password));
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 router.get('/signup', function(req, res, next) {
-  // for login or registration page
+  // for registration page
   res.render('./signup', {
     linkHome: '/index',
     linkApt: '/aptSch',
@@ -87,14 +77,33 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   // for registration page
   var userSubmission = req.body;
-  var ketchupUsers = function() {
-    return knex('users');
-  };
-  ketchupUsers().where({
+
+  // var ketchupUsers = function() {
+  //   return knex('users');
+  // };
+  knex('users').where({
     //what you would like to search for
   }).then(function(users) {
     //what to do on success
-    account().createAccount(res, userSubmission, users);
+    var valid = account().isValidAccount(res, userSubmission, users);
+    switch (valid) {
+      case 0:
+        res.send('invalid password');
+        break;
+      case 1:
+        res.send('invalid username');
+        break;
+      case 2:
+        knex.insert({username: userSubmission.username, password: account().hashPassword(userSubmission)}).into('users').then(function (success) {
+          console.log(success);
+          res.send('success');
+        }, function (err) {
+          console.log(err);
+          res.end(err);
+        });
+        break;
+      default:
+    }
   }).catch(function(err) {
     //what to do on error
     console.log(err);

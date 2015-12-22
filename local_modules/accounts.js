@@ -3,13 +3,13 @@ var bcrypt = require('bcrypt');
 
 function account() {
   return {
-    createAccount: function (res, userSubmission, users) {
+    isValidAccount: function (res, userSubmission, users) {
       function isValidPassword() {
         if (userSubmission.password.length <= 8) {
           return false;
         } else if (userSubmission.password === userSubmission.confirm_password) {
-          var hash = bcrypt.hashSync(sha256.x2(userSubmission.password), 11);
-          return hash;
+
+          return true;
         } else {
           return false;
         }
@@ -25,22 +25,23 @@ function account() {
         return unique;
       }
 
-      var password = isValidPassword();
-      if (password) {
+      if (isValidPassword()) {
         if (isUsernameUnique()) {
-          res.send('username is unique ');
-          //add user to database
+          return 2;
         } else {
-          res.send('username is not unique');
-          //show an error
+          return 1;
         }
       } else {
-        res.send('invalid password');
+          return 0;
       }
     },
+    hashPassword: function (userSubmission) {
+      var hash = bcrypt.hashSync(sha256.x2(userSubmission.password), 11);
+      return hash;
+    },
     //checks the submitted password against the matching username's stored password
-    compareCredentials: function (res, userSubmission) {
-
+    compareCredentials: function (res, password1, password2) {
+      return bcrypt.compareSync(password1, password2);
     }
   };
 }
