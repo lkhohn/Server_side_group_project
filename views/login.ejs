@@ -16,7 +16,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!-- end bootstrap code/ begin css entry -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 
 </head>
 
@@ -57,53 +57,29 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- end navbar area-->
-    <div class="row">
-      <div class="top_Text">
-        <div class="col-md-12">
-        This is the top text on the line
-        </div>
+    <div class="bigBox">
+      <div class="leftspace col-md-4">
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 rowStart">
-      </div>
-    <div class="col-xs-6 col-md-3 thumbnails">
-      <a href="#" class="thumbnail">
-        <img src="..." alt="...">
-          <p> this is the description for the box</p>
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3 thumbnails">
-      <a href="#" class="thumbnail">
-        <img src="..." alt="...">
-          <p> this is the description for the box</p>
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3 rowEnd">
-    </div>
-  </div>
-  <div class="row">
-    <div class="desc_Text">
-      <div class="col-md-12">
-      This is the text below the thubnails
-      </div>
-    </div>
-    <div class="btm_Desc">
-      <div class="col-md-12">
-      Second line below thumbnails
-      </div>
-    </div>
-</div>
-
-<form action="/login" method="post">
-   <label for="username">Enter a Username
-     <input type="text" name="username"></input>
-   </label>
-   <label for="email">Enter an Email
-     <input type="text" name="password"></input>
-   </label>
-   <button type="submit"></button>
- </form>
+      <div class="loginForm col-md-4">
+        <form action="/signup" method="post">
+           <div class="formBox"><label for="username">Enter a Username
+             <input type="text" name="username"></input>
+           </label>
+         </div>
+           <div class="formBox"><label for="email">Enter an Email<br>
+             <input type="text" name="email"></input>
+           </label>
+           </div>
+           <div class="formBox"><label for="password">Create a Password
+             <input type="text" name="password"></input>
+           </label>
+           </div>
+           <button type="submit">Submit</button>
+         </form>
+       </div>
+       <div class="rightSpace">
+       </div>
+   </div>
 
   <footer class="navbar navbar-default" "footer">
   <div class="container-fluid">

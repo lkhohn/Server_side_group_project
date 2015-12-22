@@ -57,21 +57,33 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- end navbar area-->
-    <form action="/signup" method="post">
-       <label for="username">Enter a Username
-         <input type="text" name="username"></input>
-       </label>
-       <label for="email">Enter an Email
-         <input type="text" name="email"></input>
-       </label>
-       <label for="password">Create a Password
-         <input type="text" name="password"></input>
-       </label>
-       <label for="confirm_password">Confirm Password
-         <input type="text" name="confirm_password"></input>
-       </label>
-       <button type="submit"></button>
-     </form>
+    <div class="bigBox">
+      <div class="leftspace col-md-4">
+      </div>
+      <div class="signupForm col-md-4">
+        <form action="/signup" method="post">
+           <div class="formBox"><label for="username">Enter a Username
+             <input type="text" name="username"></input>
+           </label>
+         </div>
+           <div class="formBox"><label for="email">Enter an Email<br>
+             <input type="text" name="email"></input>
+           </label>
+           </div>
+           <div class="formBox"><label for="password">Create a Password
+             <input type="text" name="password"></input>
+           </label>
+           </div>
+           <div class="formBox"><label for="confirm_password">Confirm Password
+             <input type="text" name="confirm_password"></input>
+           </label>
+           </div>
+           <button type="submit">Submit</button>
+         </form>
+       </div>
+       <div class="rightSpace">
+       </div>
+   </div>
 
   <footer class="navbar navbar-default" "footer">
   <div class="container-fluid">

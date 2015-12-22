@@ -41,3 +41,104 @@ html, body {
     *display:inline; /* ie7 fix */
     float: none; /* this is the part that makes it work */
 }
+.formBox {
+  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.bigBox {
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	right bottom,
+	color-stop(0, #6949DE),
+	color-stop(1, #6BFFCE),
+	color-stop(1, #FF0000)
+);
+height: 100%;
+
+background-image: -o-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+background-image: -moz-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+background-image: -webkit-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+background-image: -ms-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+background-image: linear-gradient(to right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+}
+
+.footer {
+  position: fixed;
+  top: 0%;
+  transform: translateY(100%);
+}
+.signupForm {
+  display: block;
+  transition: background-color 0.5s ease;
+  background-color: white;
+  postion: relative;
+  top: 100px;
+  height: 500px;
+  width: 500px;
+
+
+    text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+1
+2
+3
+4
+    text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+}
+.loginForm {
+  display: block;
+  transition: background-color 0.5s ease;
+  background-image: url("http://c8.alamy.com/comp/A0PFF9/water-ripples-blue-calm-calming-reflection-deep-shallow-clear-swimming-A0PFF9.jpg");
+  postion: relative;
+  top: 100px;
+  height: 400px;
+  width: 400px;
+
+
+    text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+1
+2
+3
+4
+    text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.form-group{
+  padding-top: 40px;
+}
+/*.signupForm:hover{109CFF
+  background-color: -webkit-gradient(
+  	linear,
+  	left top,
+  	right bottom,
+  	colorb -stop(0.77, #6974DA),
+  	color-stop(1, #6AD2D2)
+  );*/
+  /*background-image: -o-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
+  background-image: -moz-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
+  background-image: -webkit-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
+  background-image: -ms-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
+  background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);}*/
+
+/*div {
+  transition: background-color 0.5s ease;
+  background-color: red;
+}
+div:hover {
+  background-color: green;
+}*/
