@@ -19,21 +19,21 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href= <%=linkHome %> >ketchUp</a>
+        <a class="navbar-brand" href=< %=linkHome %> >ketchUp</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul id='nav' class="nav navbar-nav">
-          <li class='active'><a href= <%=linkHome %> >home <span class="sr-only"</span></a></li>
-          <li><a href= <%=linkApt %> >schedule a meeting</a></li>
+          <li class='active'><a href=< %=linkHome %> >home <span class="sr-only"</span></a></li>
+          <li><a href=< %=linkApt %> >schedule a meeting</a></li>
         </ul>
         <ul id='nav' class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">account <span class="caret"></span></a>
             <ul id='nav' class="dropdown-menu">
-              <li><a href= <%=linkPref %> >preferences</a></li>
+              <li><a href=< %=linkPref %> >preferences</a></li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href= <%=linkLogout %>
+                <a href=< %=linkLogout %>
                   <span class="badge"></span>
                   <span class="glyphicon glyphicon-off" aria-hidden="true"></span> log out</a>
               </li>
@@ -62,12 +62,14 @@
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label"></label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name='mtgName' id="mtgName" placeholder="meeting name" rows="3">
               <input type="text" class="form-control" name='mtgDate' id="mtgDate" placeholder="meeting date" rows="3">
-              <input type="text" class="form-control" name='mtgTime' id="mtgTime" placeholder="meeting time" rows="3">
+              <input type="text" class="form-control" name='mtgDuration' id="mtgDuration" placeholder="meeting duration" rows="3">
+              <input type="text" class="form-control" name='mtgDesc' id="mtgDesc" placeholder="meeting description" rows="3">
+              <input type="text" class="form-control" name='mtgInvite' id="mtgInvite" placeholder="meeting invite" rows="3">
               <input type="text" class="form-control" name='mtgAddress' id="mtgAddress" placeholder="location" rows="3">
+              <input type='hidden' name='loc_lat' id='loc_lat'>
+              <input type='hidden' name='loc_lng' id='loc_lng'>
               <button type="submit" class="btn btn-default">Confirm Meeting</button>
-
             </div>
           </div>
       </div>
@@ -80,9 +82,9 @@
       <div class='row'>
         <div class='col-md-6'>
           <ul class='panel-footer-left'>
-            <ol><a href= <%=linkHome %> >home </a></ol>
-            <ol><a href= <%=linkApt %> >schedule a meeting</a></ol>
-            <ol><a href= <%=linkPref %> >preferences</a></ol>
+            <ol><a href=< %=linkHome %> >home </a></ol>
+            <ol><a href=< %=linkApt %> >schedule a meeting</a></ol>
+            <ol><a href=< %=linkPref %> >preferences</a></ol>
           </ul>
         </div>
         <div class='col-md-6'>
