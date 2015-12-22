@@ -18,24 +18,25 @@
 
 
 <body>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href= <%=linkHome %> >ketchUp</a>
+        <a class="navbar-brand" href=< %=linkHome %> >ketchUp</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul id='nav' class="nav navbar-nav">
-          <li class='active'><a href= <%=linkHome %> >home <span class="sr-only"</span></a></li>
-          <li><a href= <%=linkApt %> >schedule a meeting</a></li>
+          <li class='active'><a href=< %=linkHome %> >home <span class="sr-only"</span></a></li>
+          <li><a href=< %=linkApt %> >schedule a meeting</a></li>
         </ul>
         <ul id='nav' class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">account <span class="caret"></span></a>
             <ul id='nav' class="dropdown-menu">
-              <li><a href= <%=linkPref %> >preferences</a></li>
+              <li><a href=< %=linkPref %> >preferences</a></li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href= <%=linkLogout %>
+                <a href=< %=linkLogout %>
                   <span class="badge"></span>
                   <span class="glyphicon glyphicon-off" aria-hidden="true"></span> log out</a>
               </li>
@@ -47,74 +48,70 @@
   </nav>
 
 
-  <div class="bigBox">
+  <div class="container" id="prefBody">
+
     <div class="row">
       <div class="leftBox col-md-12">
         <h1 class='prefHeader'> user preferences </h1>
       </div>
     </div>
 
-    <div class="row">
-      <div class="container">
-        <form class="form-horizontal">
-          <div class="form-group" id='form-group-pref'>
-            <label for="inputUser3" class="col-sm-2 control-label">User ID</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="inputUser3" placeholder="change your userID">
-            </div>
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group" id='form-group-pref'>
+          <label for="inputUser3" class="col-sm-2 control-label">User ID</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputUser3" placeholder="change your userID">
           </div>
+        </div>
 
-          <div class="form-group" id='form-group-pref'>
-            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-8">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="update your email">
-            </div>
+        <div class="form-group" id='form-group-pref'>
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="update your email">
           </div>
+        </div>
 
-          <div class="form-group" id='form-group-pref'>
-            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-8">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="change your password">
-            </div>
+        <div class="form-group" id='form-group-pref'>
+          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="change your password">
           </div>
+        </div>
 
-          <div class="form-group" id='form-group-pref'>
-            <label for="locationUser3" class="col-sm-2 control-label">Default Location</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="locationUser3" placeholder="set your default location">
-            </div>
+        <div class="form-group" id='form-group-pref'>
+          <label for="locationUser3" class="col-sm-2 control-label">Default Location</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="locationUser3" placeholder="set your default location">
           </div>
+        </div>
 
-          <div class="form-group" id='form-group-pref'>
-            <label for="restaurantPrefUser3" class="col-sm-2 control-label">Favorite Meeting Location</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="restaurantPrefUser3" placeholder="set your favorite place to meet">
-            </div>
+        <div class="form-group" id='form-group-pref'>
+          <label for="restaurantPrefUser3" class="col-sm-2 control-label">Favorite Meeting Location</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="restaurantPrefUser3" placeholder="set your favorite place to meet">
           </div>
+        </div>
 
-          <div class="form-group" id='form-group-pref'>
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Save Changes</button>
-            </div>
+        <div class="form-group" id='form-group-pref'>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Save Changes</button>
           </div>
+        </div>
 
-        </form>
-      </div>
-      </div>
-
+      </form>
     </div>
 
-
-
+  </div>
 
   <div class="panel panel-default">
     <div class="panel-footer">
       <div class='row'>
         <div class='col-md-6'>
           <ul class='panel-footer-left'>
-            <ol><a href= <%=linkHome %> >home </a></ol>
-            <ol><a href= <%=linkApt %> >schedule a meeting</a></ol>
-            <ol><a href= <%=linkPref %> >preferences</a></ol>
+            <ol><a href=< %=linkHome %> >home </a></ol>
+            <ol><a href=< %=linkApt %> >schedule a meeting</a></ol>
+            <ol><a href=< %=linkPref %> >preferences</a></ol>
           </ul>
         </div>
         <div class='col-md-6'>
