@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Select your location</title>
 
-  <link rel="stylesheet" href="/stylesheets/stylemaps.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -71,13 +71,14 @@
 
     <div id='map'></div>
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="POST" action="/aptSch">
       <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Meeting Information</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name='mtgName' id="mtgName" placeholder="meeting name" rows="3">
           <input type="text" class="form-control" name='mtgDate' id="mtgDate" placeholder="meeting date" rows="3">
-          <input type="text" class="form-control" name='mtgTime' id="mtgTime" placeholder="meeting time" rows="3">
+          <input type="text" class="form-control" name='mtgDuration' id="mtgDuration" placeholder="meeting duration" rows="3">
+          <input type="text" class="form-control" name='mtgDesc' id="mtgDesc" placeholder="meeting description" rows="3">
+          <input type="text" class="form-control" name='mtgInvite' id="mtgInvite" placeholder="meeting invite" rows="3">
           <input type="text" class="form-control" name='mtgLocation' id="mtgLocation" placeholder="location" rows="3">
         </div>
       </div>
