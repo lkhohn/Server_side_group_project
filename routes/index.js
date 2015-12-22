@@ -55,7 +55,9 @@ router.post('/login', function(req, res, next) {
   knex('users').where({
     username: userSubmission.username
   }).then(function(user) {
-    res.send(account().compareCredentials(res, userSubmission.password, user[0].password));
+    delete user[0].password;
+    res.cookie('user_session', user[0], {signed: true});
+    res.redirect('/users/usrhome/');
   }).catch(function(err) {
     console.log(err);
   });
@@ -106,7 +108,10 @@ router.post('/signup', function(req, res, next) {
   });
 });
 
-//{"id":1,"username":"micah.eberhard@gmail.com","password":"tempPass","salt":"1","email":"micah.eberhard@gmail.com"}
+router.get('/logout', function(req, res){
+  res.clearCookie('user_session');
+  res.redirect('/');
+});
 
 router.get('/usrhome', function(req, res, next) {
   // home page after login in/registration
