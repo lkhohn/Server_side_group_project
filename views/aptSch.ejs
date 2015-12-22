@@ -68,13 +68,13 @@
 
     <div id='map'></div>
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="POST" action="/aptSch">
       <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Meeting Information</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name='mtgName' id="mtgName" placeholder="meeting name" rows="3">
           <input type="text" class="form-control" name='mtgDate' id="mtgDate" placeholder="meeting date" rows="3">
-          <input type="text" class="form-control" name='mtgTime' id="mtgTime" placeholder="meeting time" rows="3">
+          <input type="text" class="form-control" name='mtgDuration' id="mtgDuration" placeholder="meeting duration" rows="3">
+          <input type="text" class="form-control" name='mtgDesc' id="mtgDesc" placeholder="meeting description" rows="3">
           <input type="text" class="form-control" name='mtgLocation' id="mtgLocation" placeholder="location" rows="3">
         </div>
       </div>

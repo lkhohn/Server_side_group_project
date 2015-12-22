@@ -87,10 +87,13 @@ router.post('/signup', function(req, res, next) {
         res.send('invalid username');
         break;
       case 2:
-        knex.insert({username: userSubmission.username, password: account().hashPassword(userSubmission)}).into('users').then(function (success) {
+        knex.insert({
+          username: userSubmission.username,
+          password: account().hashPassword(userSubmission)
+        }).into('users').then(function(success) {
           console.log(success);
           res.send('success');
-        }, function (err) {
+        }, function(err) {
           console.log(err);
           res.end(err);
         });
@@ -127,6 +130,20 @@ router.get('/aptSch', function(req, res, next) {
 
 router.post('/aptSch', function(req, res, next) {
   // appoint set up
+  var userSubmission = req.body;
+  knex('appointments').where({
+    //what you would like to search for
+  }).then(function(users) {
+    console.log('hey');
+    knex.insert({
+      start_datetime: userSubmission.mtgDate,
+      duration: userSubmission.mtgDuration,
+      description: userSubmission.mtgDescription
+    }).into('appointments').then(function(success) {
+      res.send('success');
+      res.end();
+    });
+  });
 });
 
 router.get('/pref', function(req, res, next) {
