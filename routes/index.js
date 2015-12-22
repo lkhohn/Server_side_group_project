@@ -175,7 +175,7 @@ router.get('/usrhome', function(req, res, next) {
   ).where({
       creator_id: userID
   }).orderBy(
-    'start_datetime','desc'
+    'start_datetime','asc'
    ).then(function(result) {
 
     aptsStr = getAptsList(result);
@@ -188,7 +188,7 @@ router.get('/usrhome', function(req, res, next) {
      ).where({
          invite_id: userID
      }).orderBy(
-       'start_datetime','desc'
+       'start_datetime','asc'
       ).then(function(result) {
         aptsIStr = getAptsList(result);
 
