@@ -19,6 +19,7 @@ CREATE TABLE appointments(
   id SERIAL PRIMARY KEY,
   creator_id integer,
   invite_id integer,
+  address VARCHAR(256),
   loc_lat  decimal,
   loc_lng decimal,
   start_datetime VARCHAR(256),
