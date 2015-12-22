@@ -243,10 +243,7 @@ router.post('/aptSch', function(req, res, next) {
   // appoint set up
   var userSubmission = req.body;
   var userID = 1;
-  knex('appointments').where({
-    //what you would like to search for
-  }).then(function(users) {
-    knex.insert({
+  knex('appointments').insert({
       creator_id: userID,
       invite_id: 2,
       address: userSubmission.mtgAddress,
@@ -260,10 +257,14 @@ router.post('/aptSch', function(req, res, next) {
       // location_id:
     }).into('appointments').then(function(success) {
       // res.send('success');
+      console.log("success");
       res.redirect('/usrhome');
       res.end();
+    }).catch(function(err) {
+      res.redirect('/usrhome');
+      res.end();
+      console.error(err);
     });
-  });
 });
 
 router.get('/pref', function(req, res, next) {
