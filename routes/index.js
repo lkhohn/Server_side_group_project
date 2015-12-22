@@ -55,9 +55,17 @@ router.post('/login', function(req, res, next) {
   knex('users').where({
     username: userSubmission.username
   }).then(function(user) {
-    delete user[0].password;
-    res.cookie('user_session', user[0], {signed: true});
-    res.redirect('/users/usrhome/');
+    if (!user[0]) {
+      res.send('invalid username or password');
+    } else {
+      if (account().compareCredentials(res, userSubmission.password, user[0].password)) {
+        delete user[0].password;
+        res.cookie('user_session', user[0], {signed: true});
+        res.redirect('/users/usrhome/');
+      } else {
+        res.send('invalid username or password');
+      }
+    }
   }).catch(function(err) {
     console.log(err);
   });
