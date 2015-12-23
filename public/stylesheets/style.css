@@ -3,6 +3,9 @@ cd body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+body{
+  background-color: gray;
+}
 
 a {
   color: #00B7FF;
@@ -20,24 +23,64 @@ html, body {
   overflow:auto;
   padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
+.landBody {
+  background-color: gray;
+}
+.headLine{
+  font-size: 4rem;
+  color: blue;
+}
+.loginButton {
+  background-color: beige;
+  height: 10rem;
+  padding-top: 2.5rem;
+  border-radius: 5rem;
+  width: 12rem;
+  position: relative;
+  left: 35rem;
+  font-size: 2rem;
+}
 
-/*LKH edit:  If used on another page, please update tag names to be page specific
-.row {
-  text-align: center;
+.signUpButton {
+  background-color: beige;
+  height: 10rem;
+  padding-top: 2.5rem;
+  border-radius: 5rem;
+  width: 12rem;
+  position: relative;
+  left: 40rem;
+  font-size: 2rem;
 }
-*/
+.lCoverUp {
+  width: wrap;
+  background-color: gray;
+  height: 45rem;
+  position:relative;
+  z-index:-1;
+}
+.coverUp {
+  width: wrap;
+  background-color: gray;
+  height: 45rem;
+  position:relative;
+  z-index:-1;
+  bottom: 30rem;
+}
+.centerBox {
+  width: 10rem;
+}
+.bigBox {
+  background-color: gray;
+}
+.sBigBox {
+  padding-top: 3rem;
+}
 
-.thumbnails {
-    text-align:center;
+.signupForm {
+  background-color: beige;
+  border-radius: 5rem;
 }
-.Name {
 
-}
-.thumbnails > li {
-    display: inline-block;
-    *display:inline; /* ie7 fix */
-    float: none; /* this is the part that makes it work */
-}
 .formBox {
   padding-bottom: 20px;
   padding-top: 40px;
@@ -45,112 +88,29 @@ html, body {
   padding-right: 20%;
 }
 
-.bigBox {
-background-image: -webkit-gradient(
-	linear,
-	left top,
-	right bottom,
-	color-stop(0, #6949DE),
-	color-stop(1, #6BFFCE),
-	color-stop(1, #FF0000)
-);
-height: 100%;
-
-background-image: -o-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
-background-image: -moz-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
-background-image: -webkit-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
-background-image: -ms-linear-gradient(right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
-background-image: linear-gradient(to right bottom, #6949DE 0%, #6BFFCE 100%, #FF0000 100%);
+.signUpBox {
+  padding-bottom: 20px;
+  padding-top: 5rem;
+  padding-left: 25rem;
+  padding-right: 20%;
+  font-size: 2rem;
 }
-
-
-/*.signupForm {
-  display: block;
-  background: -webkit-gradient(
-  	linear,
-  	left top,
-  	right bottom,
-  	color-stop(0.77, #6974DA),
-  	color-stop(1, #6AD2D2)
-  );
-background-image: -o-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -moz-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -webkit-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -ms-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);
-
-  postion: relative;
-  top: 100px;
-  height: 500px;
-  width: 500px;
-}
-.loginForm {
-  display: block;
-  background: -webkit-gradient(
-  	linear,
-  	left top,
-  	right bottom,
-  	color-stop(0.77, #6974DA),
-  	color-stop(1, #6AD2D2)
-  );
-background-image: -o-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -moz-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -webkit-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: -ms-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);
-
-  postion: relative;
-  top: 100px;
-  height: 400px;
-  width: 500px;
-}*/
 
 .extension {
   height: 100px;
   font-size: 3em ;
 }
 
+.submitButton {
+  position:relative;
+  left: 60rem;
+  bottom: 2rem;
+}
 
 .title {
   padding-top: 150px;
+  font-size: 3rem;
 }
-
-/*LKH edit: too much padding on the pref form. If used on another page, please update tag names to be page specific
-.form-group{
-  padding-top: 50px;
-
-.prefForm {
-  background-color: white;
-  width: 50%;
-}
-END LKH edit
-*/
-
-/*.signupForm:hover{109CFF
-  background-color: -webkit-gradient(
-  	linear,
-  	left top,
-  	right bottom,
-  	colorb -stop(0.77, #6974DA),
-  	color-stop(1, #6AD2D2)
-  );*/
-
-  /*background-image: -o-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-  background-image: -moz-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-  background-image: -webkit-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-  background-image: -ms-linear-gradient(right bottom, #6974DA 77%, #6AD2D2 100%);
-  background-image: linear-gradient(to right bottom, #6974DA 77%, #6AD2D2 100%);}*/
-
-
-/*div {
-  transition: background-color 0.5s ease;
-  background-color: red;
-}
-div:hover {
-  background-color: green;
-}*/
-
-
 
 /* LINDSAY EDITS */
 #map {
