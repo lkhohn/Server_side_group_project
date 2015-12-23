@@ -223,11 +223,12 @@ router.post('/aptSch', function(req, res, next) {
 
 router.get('/pref', function(req, res, next) {
   // preferences set up
-  res.render('./pref', {
-    linkHome: '/usrhome',
-    linkApt: '/aptSch',
-    linkPref: '/pref',
-    linkLogout: '/logout'
+  res.render('./index', {
+    linkHome: '/',
+    linkApt: '/',
+    linkPref: '/',
+    linkLogout: '/logout',
+    username:" "
   });
 });
 
