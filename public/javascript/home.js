@@ -2,27 +2,33 @@ window.onload = function() {
 
   var yourApts = document.getElementById('yourApts');
   var invApts = document.getElementById('invApts');
-
   var map;
+  var mapArr = [];
   var infoWindow;
   function initMap(num, pos) {
     var str = 'map'+num.toString();
-    map = new google.maps.Map(document.getElementById(str), {
+    var map = new google.maps.Map(document.getElementById(str), {
       center: pos,
-      zoom: 10
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      zoom: 14,
+      mapPos: pos
     });
-
+    mapArr.push(map);
     infoWindow = new google.maps.InfoWindow();
     infoWindow.setPosition(pos);
     infoWindow.setContent('Location found');
-    map.setCenter(pos);
     var marker = new google.maps.Marker({
       position: pos,
       map: map,
       draggable: true,
       title: "Your meeting is here."
     });
+    map.setCenter(pos);
+    map.panTo(pos);
+    //var mapPos = pos;
   }
+
+
   var num = 0;
   var item = document.getElementById('map0');
   while (item !== undefined && item !== null) {
@@ -52,6 +58,12 @@ window.onload = function() {
       child.style.display = 'block';
     else
       child.style.display = 'none';
+
+    for(var item in mapArr)
+    {
+      google.maps.event.trigger(mapArr[item], 'resize');
+      mapArr[item].panTo(mapArr[item].mapPos);
+    }
   });
   invApts.addEventListener('click', function(event) {
     var tar = event.target;
@@ -65,5 +77,13 @@ window.onload = function() {
       child.style.display = 'block';
     else
       child.style.display = 'none';
+
+
+    for(var item in mapArr)
+    {
+      google.maps.event.trigger(mapArr[item], 'resize');
+      mapArr[item].panTo(mapArr[item].mapPos);
+    }
   });
+
 };
