@@ -50,15 +50,18 @@ window.onload = function() {
       console.log(child);
     }
 
-    if (child.style.display === 'none')
-      child.style.display = 'block';
-    else
-      child.style.display = 'none';
-
-    for(var item in mapArr)
+    if(child.className === 'row moreInfo')
     {
-      google.maps.event.trigger(mapArr[item], 'resize');
-      mapArr[item].panTo(mapArr[item].mapPos);
+      if (child.style.display === 'none')
+        child.style.display = 'block';
+      else
+        child.style.display = 'none';
+
+      for(var item in mapArr)
+      {
+        google.maps.event.trigger(mapArr[item], 'resize');
+        mapArr[item].panTo(mapArr[item].mapPos);
+      }
     }
   });
   invApts.addEventListener('click', function(event) {
@@ -69,15 +72,18 @@ window.onload = function() {
       console.log(child);
     }
 
-    if (child.style.display === 'none')
-      child.style.display = 'block';
-    else
-      child.style.display = 'none';
-
-    for(var item in mapArr)
+    if(child.className === 'row moreInfo')
     {
-      google.maps.event.trigger(mapArr[item], 'resize');
-      mapArr[item].panTo(mapArr[item].mapPos);
+      if (child.style.display === 'none')
+        child.style.display = 'block';
+      else
+        child.style.display = 'none';
+
+      for(var item in mapArr)
+      {
+        google.maps.event.trigger(mapArr[item], 'resize');
+        mapArr[item].panTo(mapArr[item].mapPos);
+      }
     }
   });
 
