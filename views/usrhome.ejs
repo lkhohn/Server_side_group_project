@@ -12,10 +12,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <script src='public/javascript/navBar.js'></script>
+
 
   <style media="screen">
-    .aptCollector{
+    .aptCollector {
       display: block;
       height: auto;
       box-shadow: .2rem .2rem .4rem .2rem #000000;
@@ -24,7 +24,8 @@
       background-color: rgb(255, 255, 255);
       border-radius: 1rem;
     }
-    .aptHeader{
+
+    .aptHeader {
       box-shadow: .2rem .1rem .2rem .1rem #000000;
       background-color: rgb(235, 235, 235);
       margin-bottom: .2rem;
@@ -32,30 +33,37 @@
       padding-bottom: .4rem;
       border-radius: 1rem;
     }
-    .C{
+
+    .C {
       background-color: rgb(138, 177, 140);
     }
-    .M{
+
+    .M {
       background-color: rgb(232, 227, 155);
     }
-    .R{
+
+    .R {
       background-color: rgb(233, 167, 167);
     }
-    .aptHeaderL{
+
+    .aptHeaderL {
       margin-bottom: .2rem;
       padding-top: .4rem;
       padding-bottom: .4rem;
       border-radius: 1rem;
     }
-    #yourApts{
+
+    #yourApts {
       width: 40%;
       margin: auto;
     }
-    #invApts{
+
+    #invApts {
       width: 40%;
       margin: auto;
     }
-    .moreInfo{
+
+    .moreInfo {
       display: none;
     }
   </style>
@@ -65,21 +73,21 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href= <%=linkHome %> >ketchUp</a>
+        <a class="navbar-brand" href=< %=linkHome %> >ketchUp</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul id='nav' class="nav navbar-nav">
-          <li class='active'><a href= <%=linkHome %> >home <span class="sr-only"</span></a></li>
-          <li><a href= <%=linkApt %> >schedule a meeting</a></li>
+          <li class='active'><a href=< %=linkHome %> >home <span class="sr-only"</span></a></li>
+          <li><a href=< %=linkApt %> >schedule a meeting</a></li>
         </ul>
         <ul id='nav' class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">account <span class="caret"></span></a>
             <ul id='nav' class="dropdown-menu">
-              <li><a href= <%=linkPref %> >preferences</a></li>
+              <li><a href=< %=linkPref %> >preferences</a></li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href= <%=linkLogout %>
+                <a href=< %=linkLogout %>
                   <span class="badge"></span>
                   <span class="glyphicon glyphicon-off" aria-hidden="true"></span> log out</a>
               </li>
@@ -91,57 +99,61 @@
   </nav>
 
   <div class="bigBox">
-  <div class="row">
-    <div class="top_Text">
-      <div class="col-md-12">
-        <h2>Your Appointments</h2>
-      </div>
-    </div>
-  </div>
-  <div id="yourApts">
-    <%-yourApts %>
-  </div>
-
-  <div class="row">
-    <div class="desc_Text">
-      <div class="col-md-12">
-        <h2>Appointments You've Been Invited To</h2>
-      </div>
-    </div>
-  </div>
-  <div id="invApts">
-    <%-invApts %>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-footer">
-      <div class='row'>
-        <div class='col-md-6'>
-          <ul class='panel-footer-left'>
-            <ol><a href= <%=linkHome %> >home </a></ol>
-            <ol><a href= <%=linkApt %> >schedule a meeting</a></ol>
-            <ol><a href= <%=linkPref %> >preferences</a></ol>
-          </ul>
-        </div>
-        <div class='col-md-6'>
-          <ul class='panel-footer-right'>
-            <ol>designed by</ol>
-            <ol><a href='https://github.com/micah-eberhard'>Micah Eberhard </a></ol>
-            <ol><a href='https://github.com/KeenanHoffman'>Keenan Hoffman </a></ol>
-            <ol><a href='https://github.com/lkhohn'>Lindsay Hohn </a></ol>
-            <ol><a href='https://github.com/James80401'>James Shield </a></ol>
-          </ul>
+    <div class="row">
+      <div class="top_Text">
+        <div class="col-md-12">
+          <h2>Your Appointments</h2>
         </div>
       </div>
     </div>
+    <div id="yourApts">
+      <%-yourApts %>
+    </div>
+
+    <div class="row">
+      <div class="desc_Text">
+        <div class="col-md-12">
+          <h2>Appointments You've Been Invited To</h2>
+        </div>
+      </div>
+    </div>
+    <div id="invApts">
+      <%-invApts %>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-footer">
+        <div class='row'>
+          <div class='col-md-6'>
+            <ul class='panel-footer-left'>
+              <ol><a href=< %=linkHome %> >home </a></ol>
+              <ol><a href=< %=linkApt %> >schedule a meeting</a></ol>
+              <ol><a href=< %=linkPref %> >preferences</a></ol>
+            </ul>
+          </div>
+          <div class='col-md-6'>
+            <ul class='panel-footer-right'>
+              <ol>designed by</ol>
+              <ol><a href='https://github.com/micah-eberhard'>Micah Eberhard </a></ol>
+              <ol><a href='https://github.com/KeenanHoffman'>Keenan Hoffman </a></ol>
+              <ol><a href='https://github.com/lkhohn'>Lindsay Hohn </a></ol>
+              <ol><a href='https://github.com/James80401'>James Shield </a></ol>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/home.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV27rjUQoC_np17lGCrD4hmuIpA0ne4pg&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
 
-<script src="/javascript/home.js" charset="utf-8"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV27rjUQoC_np17lGCrD4hmuIpA0ne4pg&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
+
 
 </body>
 

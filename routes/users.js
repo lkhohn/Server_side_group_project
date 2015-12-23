@@ -4,6 +4,7 @@ var knex = require('knex')({
   client: 'pg',
   connection: process.env.DATABASE_REMOTE
 });
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('./usrhome', {
@@ -46,17 +47,49 @@ router.get('/usrhome/', function(req, res){
               aptHeader = 'R';
             }
             var lbl = labels[i % labels.length];
+            console.log('outside of init' + row.loc_lat);
+            var map;
+            var infoWindow;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                  lat: 40.5592,
+                  lng: -105.0781
+                },
+                zoom: 12
+              });
+
+              infoWindow = new google.maps.InfoWindow();
+              console.log('inside init' + row.loc_lat);
+
+              var pos = {
+                lat: row.loc_lat,
+                lng: row.loc_lng
+              };
+              infoWindow.setPosition(pos);
+              infoWindow.setContent('Location found');
+              map.setCenter(pos);
+              var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                draggable: true,
+                title: "You are here! Drag the marker to the preferred meeting area."
+              });
+            }
+
             htmlStr +=
               //'<div class="col-md-12 aptHeaderL">'+ row.start_datetime + '</div>' +
               '<div class="col-md-12 CC'+row.creator_confirm+' IC'+row.invite_confirm+' aptHeader '+aptHeader+'">'+
               '<div class="col-md-4">'+row.start_datetime+'</div>'+
               '<div class="col-md-4">'+ row.username + '</div>'+
               '<div class="col-md-4">'+ row.address + '</div>'+
+              '<div class="col-md-12" id="map">' + '</div>' +
+
               '</div>' +
               '<div class = "row moreInfo" style="display: none;">'+
                 //'<div class="col-md-1">'+'</div>'+
                 '<div class="col-md-12">'+row.description+'</div>' +
-                //'<div class="col-md-12" id="map">'+'</div>' +
+                // '<div class="col-md-12" id="map">'+'</div>' +
               '</div>'
             ;
           }
