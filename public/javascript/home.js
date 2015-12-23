@@ -25,9 +25,7 @@ window.onload = function() {
     });
     map.setCenter(pos);
     map.panTo(pos);
-    //var mapPos = pos;
   }
-
 
   var num = 0;
   var item = document.getElementById('map0');
@@ -41,9 +39,7 @@ window.onload = function() {
     initMap(num, pos);
     num ++;
     item = document.getElementById('map'+num);
-// google.maps.event.trigger(map, 'resize');
   }
-  //initMap();
 
   yourApts.addEventListener('click', function(event) {
     var tar = event.target;
@@ -77,7 +73,6 @@ window.onload = function() {
       child.style.display = 'block';
     else
       child.style.display = 'none';
-
 
     for(var item in mapArr)
     {
