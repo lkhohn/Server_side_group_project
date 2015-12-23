@@ -62,6 +62,8 @@
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label"></label>
             <div class="col-sm-10">
+              <input id="datetimepicker" type="text" >
+
               <input type="text" class="form-control" name='mtgDate' id="mtgDate" placeholder="meeting date" rows="3">
               <input type="text" class="form-control" name='mtgDuration' id="mtgDuration" placeholder="meeting duration" rows="3">
               <input type="text" class="form-control" name='mtgDesc' id="mtgDesc" placeholder="meeting description" rows="3">
@@ -106,10 +108,15 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="javascript/maps.js"></script>
+  <script type="text/javascript" src="/javascript/maps.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV27rjUQoC_np17lGCrD4hmuIpA0ne4pg&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
 
 
+
 </body>
+
+<link rel="stylesheet" type="text/css" href="datetimepicker-master/jquery.datetimepicker.css"/ >
+<script src="datetimepicker-master/jquery.js"></script>
+<script src="datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
 
 </html>
