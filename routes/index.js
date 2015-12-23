@@ -131,7 +131,9 @@ router.get('/usrhome', function(req, res, next) {
     linkHome: '/users/usrhome',
     linkApt: '/aptSch',
     linkPref: '/pref',
-    linkLogout: '/logout'
+    linkLogout: '/logout',
+    yourApts: '',
+    invApts: ''
   });
 });
 
