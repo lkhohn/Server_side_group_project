@@ -157,7 +157,7 @@ router.get('/usrhome', function(req, res, next) {
   }
   else{
     res.render('./usrhome', {
-      linkHome: '/users/usrhome',
+      linkHome: '/usrhome',
       linkApt: '/aptSch',
       linkPref: '/pref',
       linkLogout: '/logout',
