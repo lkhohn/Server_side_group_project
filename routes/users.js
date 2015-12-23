@@ -141,8 +141,8 @@ router.get('/usrhome/', function(req, res){
 
               res.render('./usrhome', {
                 linkHome: '/users/usrhome',
-                linkApt: '/aptSch',
-                linkPref: '/pref',
+                linkApt: '/users/aptSch',
+                linkPref: '/users/pref',
                 linkLogout: '/logout',
                 yourApts: aptsStr,
                 invApts: aptsIStr,
@@ -191,4 +191,66 @@ router.get('/usrhome/', function(req, res){
   */
 });
 
+router.get('/aptSch', function(req, res, next) {
+  // appoint set up
+  var userHold = 'account';
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    userHold = userSession.username;
+  }
+  res.render('./aptSch', {
+    linkHome: '/users/usrhome',
+    linkApt: '/users/aptSch',
+    linkPref: '/users/pref',
+    linkLogout: '/logout',
+    username: userHold
+  });
+});
+
+router.post('/aptSch', function(req, res, next) {
+  // appoint set up
+  var userSubmission = req.body;
+  var userID;
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    userID = userSession.id;
+  }
+  else {
+    userID = 1;
+  }
+  knex('appointments').insert({
+      creator_id: userID,
+      invite_id: 2,
+      address: userSubmission.mtgAddress,
+      loc_lat: userSubmission.loc_lat,
+      loc_lng: userSubmission.loc_lng,
+      start_datetime: userSubmission.mtgDate,
+      duration: userSubmission.mtgDuration,
+      description: userSubmission.mtgDesc,
+      creator_confirm: 1,
+      invite_confirm: 0
+      // location_id:
+    }).into('appointments').then(function(success) {
+      // res.send('success');
+      console.log("success");
+      res.redirect('/users/usrhome');
+      res.end();
+    }).catch(function(err) {
+      res.redirect('/users/usrhome');
+      res.end();
+      console.error(err);
+    });
+});
+
+router.get('/pref', function(req, res, next) {
+  // preferences set up
+  res.render('./pref', {
+    linkHome: '/users/usrhome',
+    linkApt: '/users/aptSch',
+    linkPref: '/users/pref',
+    linkLogout: '/logout'
+  });
+});
 module.exports = router;
