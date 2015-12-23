@@ -6,7 +6,6 @@ window.onload = function() {
   var map;
   var infoWindow;
   function initMap(num, pos) {
-    //console.log("inside Init");
     var str = 'map'+num.toString();
     map = new google.maps.Map(document.getElementById(str), {
       center: pos,
@@ -14,13 +13,6 @@ window.onload = function() {
     });
 
     infoWindow = new google.maps.InfoWindow();
-    //console.log('inside init' + row.loc_lat);
-    /*
-    var pos = {
-      lat: 40.5592,
-      lng: -105.0781
-    };
-    */
     infoWindow.setPosition(pos);
     infoWindow.setContent('Location found');
     map.setCenter(pos);

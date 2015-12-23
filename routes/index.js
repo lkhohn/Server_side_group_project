@@ -7,6 +7,22 @@ var knex = require('knex')({
   connection: process.env.DATABASE_REMOTE
 });
 
+/******
+Checks a user's session, and returns an object with various session varriables such as username
+******/
+function getSession (req, res)
+{
+  var userObj = {};
+  if(req.signedCookies.user_session) {
+    knex('users').where('id', req.signedCookies.user_session.id).then(function(user){
+      if(user) {
+        userObj = req.signedCookies.user_session;
+      }
+    });
+  }
+  return req.signedCookies.user_session;
+}
+
 router.get('/example_query', function(req, res, next) {
   //example of querying Micah's database using knex
   var ketchupUsers = function() {
@@ -26,11 +42,18 @@ router.get('/example_query', function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // landing page
+  var userHold = 'account';
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    userHold = userSession.username;
+  }
   res.render('./', {
     linkHome: '/',
     linkApt: '/aptSch',
     linkPref: '/pref',
-    linkLogout: '/logout'
+    linkLogout: '/logout',
+    username: userHold
   });
 });
 
@@ -126,24 +149,39 @@ router.get('/logout', function(req, res){
 
 router.get('/usrhome', function(req, res, next) {
   // home page after login in/registration
-
-  res.render('./usrhome', {
-    linkHome: '/users/usrhome',
-    linkApt: '/aptSch',
-    linkPref: '/pref',
-    linkLogout: '/logout',
-    yourApts: '',
-    invApts: ''
-  });
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    res.redirect('/users/usrhome');
+    res.end();
+  }
+  else{
+    res.render('./usrhome', {
+      linkHome: '/users/usrhome',
+      linkApt: '/aptSch',
+      linkPref: '/pref',
+      linkLogout: '/logout',
+      yourApts: '',
+      invApts: '',
+      username: 'account'
+    });
+  }
 });
 
 router.get('/aptSch', function(req, res, next) {
   // appoint set up
+  var userHold = 'account';
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    userHold = userSession.username;
+  }
   res.render('./aptSch', {
     linkHome: '/usrhome',
     linkApt: '/aptSch',
     linkPref: '/pref',
-    linkLogout: '/logout'
+    linkLogout: '/logout',
+    username: userHold
   });
 });
 
@@ -151,8 +189,11 @@ router.post('/aptSch', function(req, res, next) {
   // appoint set up
   var userSubmission = req.body;
   var userID;
-  if(req.signedCookies.user_session.id)
-    userID = req.signedCookies.user_session.id;
+  var userSession = getSession(req,res);
+  if(userSession)
+  {
+    userID = userSession.id;
+  }
   else {
     userID = 1;
   }

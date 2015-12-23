@@ -5,20 +5,55 @@ var knex = require('knex')({
   connection: process.env.DATABASE_REMOTE
 });
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('./usrhome', {
-    linkHome: '/usrhome',
-    linkApt: '/aptSch',
-    linkPref: '/pref',
-    linkLogout: '/logout'
-  });
-});
-
-router.get('/usrhome/', function(req, res){
+/******
+Checks a user's session, and returns an object with various session varriables such as username
+This one authenticates the user - if someone doesnt have a valid seesion, they can't see whatever page this runs on.
+******/
+function getSession (req, res)
+{
+  var userObj = {};
   if(req.signedCookies.user_session) {
     knex('users').where('id', req.signedCookies.user_session.id).then(function(user){
       if(user) {
+        userObj = req.signedCookies.user_session;
+      }
+      else {
+        res.status(404);
+        res.json({ message: 'not found' });
+        }
+      }).catch(function(error){
+        res.status(404);
+        res.json({ message: error.message });
+      });
+    } else {
+      res.status(401);
+      res.json({ message: 'not allowed' });
+    }
+  return req.signedCookies.user_session;
+}
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+
+  res.redirect('/users/usrhome');
+  res.end();
+});
+
+router.get('/usrhome/', function(req, res){
+  /*
+  if(req.signedCookies.user_session) {
+    knex('users').where('id', req.signedCookies.user_session.id).then(function(user){
+      if(user) {
+        if(req.signedCookies.user_session.username)
+          username = req.signedCookies.user_session.username;
+        else {
+          userID = 1;
+        }
+        */
+        var userSession = getSession(req,res);
+        if(userSession)
+        {
+        console.log(userSession);
         // res.render('./usrhome', {
         //   linkHome: '/usrhome',
         //   linkApt: '/aptSch',
@@ -26,7 +61,7 @@ router.get('/usrhome/', function(req, res){
         //   linkLogout: '/logout'
         // });
         // home page after login in/registration
-        var userID = req.signedCookies.user_session.id;
+        var userID = userSession.id;
         var aptsStr = '';
         var aptsIStr = '';
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -110,7 +145,8 @@ router.get('/usrhome/', function(req, res){
                 linkPref: '/pref',
                 linkLogout: '/logout',
                 yourApts: aptsStr,
-                invApts: aptsIStr
+                invApts: aptsIStr,
+                username: userSession.username
               });
             }).catch(function(err) {
               //what to do on error
@@ -122,7 +158,8 @@ router.get('/usrhome/', function(req, res){
                 linkPref: '/pref',
                 linkLogout: '/logout',
                 yourApts: aptsStr,
-                invApts: aptsIStr
+                invApts: aptsIStr,
+                username: userSession.username
               });
             });
         }).catch(function(err) {
@@ -135,10 +172,11 @@ router.get('/usrhome/', function(req, res){
             linkPref: '/pref',
             linkLogout: '/logout',
             yourApts: aptsStr,
-            invApts: aptsIStr
+            invApts: aptsIStr,
+            username: userSession.username
           });
         });
-      } else {
+      } /*else {
         res.status(404);
         res.json({ message: 'not found' });
       }
@@ -150,6 +188,7 @@ router.get('/usrhome/', function(req, res){
     res.status(401);
     res.json({ message: 'not allowed' });
   }
+  */
 });
 
 module.exports = router;
