@@ -26,7 +26,7 @@ router.get('/usrhome/', function(req, res){
         //   linkLogout: '/logout'
         // });
         // home page after login in/registration
-        var userID = 1;
+        var userID = req.signedCookies.user_session.id;
         var aptsStr = '';
         var aptsIStr = '';
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
