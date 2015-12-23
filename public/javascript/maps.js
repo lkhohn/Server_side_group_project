@@ -2,7 +2,6 @@
 // pin in dropped at users current location
 // user can drag dropped pin to the general meeting area
 // based on the dragged dropped pin, map shows the closest starbucks locations
-$('#datetimepicker').datetimepicker();
 
 var map;
 var infoWindow;

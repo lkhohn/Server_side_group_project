@@ -9,7 +9,7 @@ window.onload = function() {
     var str = 'map'+num.toString();
     map = new google.maps.Map(document.getElementById(str), {
       center: pos,
-      zoom: 8
+      zoom: 10
     });
 
     infoWindow = new google.maps.InfoWindow();
@@ -20,7 +20,7 @@ window.onload = function() {
       position: pos,
       map: map,
       draggable: true,
-      title: "You are here! Drag the marker to the preferred meeting area."
+      title: "Your meeting is here."
     });
   }
   var num = 0;
@@ -35,6 +35,7 @@ window.onload = function() {
     initMap(num, pos);
     num ++;
     item = document.getElementById('map'+num);
+// google.maps.event.trigger(map, 'resize');
   }
   //initMap();
 
