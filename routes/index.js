@@ -4,7 +4,7 @@ var router = express.Router();
 var account = require('../local_modules/accounts');
 var knex = require('knex')({
   client: 'pg',
-  connection: process.env.DATABASE_URL
+  connection: process.env.DATABASE_REMOTE
 });
 
 /******
@@ -197,9 +197,20 @@ router.post('/aptSch', function(req, res, next) {
   else {
     userID = 1;
   }
+  var invite_id = 2;
+  knex('users').where({
+    username: userSubmission.mtgInvite
+  }).then(function(user) {
+    if (!user[0]) {
+      res.send("Username Does Not Exist");
+      //res.redirect('/aptSch');
+      res.end();
+    } else {
+      invite_id = user[0].id;
+
   knex('appointments').insert({
       creator_id: userID,
-      invite_id: 2,
+      invite_id: invite_id,
       address: userSubmission.mtgAddress,
       loc_lat: userSubmission.loc_lat,
       loc_lng: userSubmission.loc_lng,
@@ -219,6 +230,10 @@ router.post('/aptSch', function(req, res, next) {
       res.end();
       console.error(err);
     });
+  }
+}).catch(function(err) {
+  console.log(err);
+});
 });
 
 router.get('/pref', function(req, res, next) {
@@ -231,5 +246,6 @@ router.get('/pref', function(req, res, next) {
     username:" "
   });
 });
+
 
 module.exports = router;
