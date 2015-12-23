@@ -47,14 +47,17 @@ router.get('/', function(req, res, next) {
   if(userSession)
   {
     userHold = userSession.username;
+    res.redirect('/usrhome');
   }
-  res.render('./', {
-    linkHome: '/',
-    linkApt: '/aptSch',
-    linkPref: '/pref',
-    linkLogout: '/logout',
-    username: userHold
-  });
+  else{
+    res.render('./', {
+      linkHome: '/',
+      linkApt: '/aptSch',
+      linkPref: '/pref',
+      linkLogout: '/logout',
+      username: userHold
+    });
+  }
 });
 
 router.post('/', function(req, res, next) {
