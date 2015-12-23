@@ -107,7 +107,7 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   // for registration page
   var userSubmission = req.body;
-  console.log(userSubmission);
+  //console.log(userSubmission);
   knex('users').where({
     //what you would like to search for
   }).then(function(users) {
