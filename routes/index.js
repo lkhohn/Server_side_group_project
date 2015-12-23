@@ -126,14 +126,12 @@ router.get('/logout', function(req, res){
 
 router.get('/usrhome', function(req, res, next) {
   // home page after login in/registration
-  
+
   res.render('./usrhome', {
     linkHome: '/users/usrhome',
     linkApt: '/aptSch',
     linkPref: '/pref',
-    linkLogout: '/logout',
-    yourApts: aptsStr,
-    invApts: aptsIStr
+    linkLogout: '/logout'
   });
 });
 
