@@ -74,7 +74,7 @@ router.get('/usrhome/', function(req, res){
         ).where({
             creator_id: userID
         }).orderBy(
-          'start_datetime','desc'
+          'start_datetime','asc'
          ).then(function(result) {
 
           aptsStr = getAptsList(result);
@@ -87,12 +87,12 @@ router.get('/usrhome/', function(req, res){
            ).where({
                invite_id: userID
            }).orderBy(
-             'start_datetime','desc'
+             'start_datetime','asc'
             ).then(function(result) {
               aptsIStr = getAptsList(result);
 
               res.render('./usrhome', {
-                linkHome: '/usrhome',
+                linkHome: '/users/usrhome',
                 linkApt: '/aptSch',
                 linkPref: '/pref',
                 linkLogout: '/logout',
@@ -104,7 +104,7 @@ router.get('/usrhome/', function(req, res){
               console.log(err);
 
               res.render('./usrhome', {
-                linkHome: '/usrhome',
+                linkHome: '/users/usrhome',
                 linkApt: '/aptSch',
                 linkPref: '/pref',
                 linkLogout: '/logout',
@@ -117,7 +117,7 @@ router.get('/usrhome/', function(req, res){
           console.log(err);
 
           res.render('./usrhome', {
-            linkHome: '/usrhome',
+            linkHome: '/users/usrhome',
             linkApt: '/aptSch',
             linkPref: '/pref',
             linkLogout: '/logout',
