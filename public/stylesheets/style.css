@@ -6,6 +6,10 @@ cd body {
 body{
   background-color: gray;
 }
+.container {
+  background-color:gray ;
+}
+
 
 a {
   color: #00B7FF;
