@@ -3,21 +3,8 @@ cd body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-body{
-  background-color: gray;
-}
-.container {
-  background-color:gray ;
-}
 
 
-a {
-  color: #00B7FF;
-}
-
-html, body {
-  height: 100%;
-}
 
 #wrap {
   min-height: 100%;
@@ -27,15 +14,14 @@ html, body {
   overflow:auto;
   padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
-.landBody {
-  background-color: gray;
+
+/* index page */
+.page-header {
+  text-align:center;
 }
-.headLine{
-  font-size: 4rem;
-  color: blue;
-}
+
+
 .loginButton {
-  background-color: beige;
   height: 10rem;
   padding-top: 2.5rem;
   border-radius: 5rem;
@@ -46,7 +32,6 @@ html, body {
 }
 
 .signUpButton {
-  background-color: beige;
   height: 10rem;
   padding-top: 2.5rem;
   border-radius: 5rem;
@@ -57,14 +42,12 @@ html, body {
 }
 .lCoverUp {
   width: wrap;
-  background-color: gray;
   height: 45rem;
   position:relative;
   z-index:-1;
 }
 .coverUp {
   width: wrap;
-  background-color: gray;
   height: 45rem;
   position:relative;
   z-index:-1;
@@ -81,7 +64,6 @@ html, body {
 }
 
 .signupForm {
-  background-color: beige;
   border-radius: 5rem;
 }
 
